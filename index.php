@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/partials-php/database.php";
+include __DIR__ . "/database.php";
 
 ?>
 
@@ -21,13 +21,16 @@ include __DIR__ . "/partials-php/database.php";
     </header>
 
     <main>
-        <div class="dischi">
+        <div class="dischi container-small-small">
             <ul class="cds-lista flex">
             <?php foreach($database as $cd){ ?>
                 <li class="cd">
 
-                <img src="<?php echo $cd['poster'] ?>" alt="">
-                <h3> <?php echo $cd['title'] ?></h3>
+                    <img src="<?php echo $cd['poster'] ?>" alt="">
+                    <h3 class="mt white"> <?php echo $cd['title'] ?></h3>
+                    <h4 class="mt white fs"> <?php echo $cd['author'] ?> </h4>
+                    <h4 class="mt white"> <?php echo $cd['year'] ?> </h4>
+                    <h4 class="mt white fs"> <?php echo $cd['genre'] ?> </h4>
                 </li>
             <?php } ?>
                  
