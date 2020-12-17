@@ -38,5 +38,8 @@ include __DIR__ . "/database.php";
             </ul>
         </div>
     </main>
+
+    <!-- inclusione js -->
+    <script src="./dist/js/main.js"></script>
 </body>
 </html>
