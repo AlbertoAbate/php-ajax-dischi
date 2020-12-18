@@ -14420,7 +14420,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({//ricorda di inserire app in html
+var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  el: '#app',
+  data: {
+    cds: []
+  },
+  created: function created() {
+    var _this = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost/php-ajax-dischi/scripts/json-script.php').then(function (response) {
+      // handle success
+      //console.log(response.data);
+      _this.cds = response.data;
+    })["catch"](function (error) {
+      // handle error
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
