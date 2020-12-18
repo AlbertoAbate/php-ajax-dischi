@@ -43,6 +43,12 @@ body {
 .header-top img {
   width: 40px;
 }
+.header-top select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+}
 
 main {
   flex-grow: 1;

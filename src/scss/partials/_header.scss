@@ -5,4 +5,10 @@
     & img {
         width: 40px;
     }
+    select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+    }
 }

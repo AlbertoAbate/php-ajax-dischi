@@ -14423,7 +14423,8 @@ __webpack_require__.r(__webpack_exports__);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
-    cds: []
+    cds: [],
+    actualAuthor: "all"
   },
   created: function created() {
     var _this = this;
@@ -14436,6 +14437,26 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       // handle error
       console.log(error);
     });
+  },
+  methods: {
+    selectAuthor: function selectAuthor() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost/php-ajax-dischi/scripts/json-script.php").then(function (response) {
+        var cdsList = response.data.response;
+
+        if (_this2.actualAuthor !== "all") {
+          cdsList = cdsList.filter(function (element) {
+            return element.author.toLowerCase() === _this2.actualAuthor;
+          });
+        }
+
+        _this2.cds = cdsList;
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
   }
 });
 

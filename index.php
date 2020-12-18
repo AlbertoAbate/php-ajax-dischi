@@ -18,7 +18,17 @@ include __DIR__ . "/scripts/database.php";
                 <div class="header-top-img container-small">
                     <img src="./img/logo.png" alt="">
                 </div>
+                <select class="container-small-small" name="all" id=""
+                    v-model="actualAuthor"
+                    @change="selectAuthor"
+                > all
+                <option
+                    v-for="cd in cds"
+                    v-bind:value="cd.author">{{cd.author}}
+                </option>
+            </select>
             </div>
+                
         </header>
 
         <main>
